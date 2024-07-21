@@ -24,6 +24,7 @@
                         [suggestions]="courses"
                         (completeMethod)="searchCourses($event)"
                         (onSelect)="selectedCourse = $event.value"
+                        placeholder="Buscar curso"
                         field="name"
                     />
                     @if (selectedCourse !== null) {
@@ -35,25 +36,19 @@
                 </div>
             </div>
             <div class=" w-full">
-                <label for="name" class="block text-sm font-bold text-gray-700 dark:text-gray-200">Usuario</label>
+                <label for="name" class="block text-sm font-bold text-gray-700 dark:text-gray-200">Usuarios</label>
                 <div class="flex items-center w-full relative">
                     <p-autoComplete
                         class="w-full autocomplete"
                         inputStyleClass="w-full"
                         panelStyleClass="w-full"
-                        formControlName="user"
-                        [disabled]="selectedUser !== null"
+                        formControlName="users"
                         [suggestions]="users"
+                        [multiple]="true"
                         (completeMethod)="searchUsers($event)"
-                        (onSelect)="selectedUser = $event.value"
+                        placeholder="Buscar usuarios"
                         field="name"
                     />
-                    @if (selectedUser !== null) {
-                        <a class="ml-2 px-4 py-2 rounded-md text-red-500 text-xl h-full absolute right-0 top-0 flex items-center"
-                           (click)="selectedUser = null; enrollmentForm.controls['user'].reset()">
-                            <fa-icon [icon]="'times-circle'"></fa-icon>
-                        </a>
-                    }
                 </div>
             </div>
             <div class="flex justify-end">

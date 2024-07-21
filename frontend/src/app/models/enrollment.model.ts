@@ -12,5 +12,5 @@ export interface EnrollmentModel {
 
 export interface EnrollmentCreateModel {
     courseId: number;
-    userId: number;
+    userIds: number[];
 }

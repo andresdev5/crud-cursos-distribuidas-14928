@@ -30,14 +30,12 @@ import { DataUtils } from '@app/shared/utils/data.utils';
 export class EnrollmentFormComponent implements OnInit {
     enrollmentForm: FormGroup = new FormGroup({
         course: new FormControl(null, [Validators.required]),
-        user: new FormControl(null, [Validators.required]),
+        users: new FormControl([], [Validators.required]),
     });
 
     courses: CourseModel[] = [];
     users: UserModel[] = [];
-
     selectedCourse: CourseModel | null = null;
-    selectedUser: UserModel | null = null;
 
     constructor(
         private router: Router,
@@ -51,9 +49,11 @@ export class EnrollmentFormComponent implements OnInit {
 
     public async onSubmit() {
         try {
+            const selectedUsers = this.enrollmentForm.get('users')?.value;
+
             await lastValueFrom(this.enrollmentService.enroll({
                 courseId: this.selectedCourse!.id,
-                userId: this.selectedUser!.id,
+                userIds: selectedUsers.map((user: UserModel) => user.id),
             }));
 
             this.toastService.showSuccess('Atención', 'La inscripción se realizó correctamente');
@@ -70,8 +70,10 @@ export class EnrollmentFormComponent implements OnInit {
     }
 
     public searchUsers(event: any): void {
+        const selectedUsers = this.enrollmentForm.get('users')?.value;
+
         this.userService.search(event.query).subscribe((users) => {
-            this.users = users;
+            this.users = users.filter((user) => !selectedUsers.find((u: UserModel) => u.id === user.id));
         });
     }
 }

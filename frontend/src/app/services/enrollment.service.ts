@@ -29,4 +29,8 @@ export class EnrollmentService {
     public enroll(enrollment: EnrollmentCreateModel): Observable<any> {
         return this.http.post(`${environment.api.urls.serviceCourses}/enrollments`, enrollment);
     }
+
+    public deleteEnrollmentsByUserId(userId: number): Observable<any> {
+        return this.http.delete(`${environment.api.urls.serviceCourses}/enrollments/delete-user-enrollments/${userId}`);
+    }
 }

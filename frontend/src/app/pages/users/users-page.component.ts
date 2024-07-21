@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserModel } from '@app/models';
-import { ToastService, UserService } from '@app/services';
+import { EnrollmentService, ToastService, UserService } from '@app/services';
 
 import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
@@ -9,6 +9,7 @@ import { MenuModule } from 'primeng/menu';
 import { ConfirmationService, MenuItem, MessageService } from 'primeng/api';
 import { lastValueFrom } from 'rxjs';
 import { SharedModule } from '@app/shared';
+import { DataUtils } from '@app/shared/utils/data.utils';
 
 interface UserTableItem {
     data: UserModel;
@@ -34,6 +35,7 @@ export class UsersPageComponent implements OnInit {
         private toastService: ToastService,
         private userService: UserService,
         private router: Router,
+        private enrollmentService: EnrollmentService
     ) {}
 
     ngOnInit(): void {
@@ -57,6 +59,11 @@ export class UsersPageComponent implements OnInit {
                         icon: 'pi pi-trash',
                         command: () => this.deleteUser(user),
                     },
+                    {
+                        label: 'Eliminar matrículas',
+                        icon: 'pi pi-trash',
+                        command: () => this.deleteUserEnrollments(user),
+                    }
                 ],
                 showPassword: false,
             }));
@@ -87,7 +94,28 @@ export class UsersPageComponent implements OnInit {
                     this.toastService.showSuccess('Atención', 'El usuario fue eliminado correctamente');
                     await this.loadUsers();
                 } catch (error) {
-                    this.toastService.showError('Error', 'Error al eliminar el usuario');
+                    this.toastService.showError('Error', DataUtils.getHttpServiceError(error, 'Error al eliminar el usuario'));
+                }
+            },
+            reject: () => {}
+        });
+    }
+
+    public async deleteUserEnrollments(user: UserModel) {
+        this.confirmationService.confirm({
+            message: `Estas seguro que deseas eliminar las matrículas del usuario '${user.name}'?`,
+            header: 'Confirmación',
+            icon: 'pi pi-info-circle',
+            acceptIcon:"none",
+            rejectIcon:"none",
+            rejectButtonStyleClass:"p-button-text",
+            accept: async () => {
+                try {
+                    await lastValueFrom(this.enrollmentService.deleteEnrollmentsByUserId(user.id));
+                    this.toastService.showSuccess('Atención', 'Las matrículas del usuario fueron eliminadas correctamente');
+                    await this.loadUsers();
+                } catch (error) {
+                    this.toastService.showError('Error', DataUtils.getHttpServiceError(error, 'Error al eliminar las matrículas del usuario'));
                 }
             },
             reject: () => {}
