@@ -2,8 +2,7 @@ import { defineConfig } from 'cypress'
 
 export default defineConfig({
     e2e: {
-        'baseUrl': 'http://localhost:4200',
-        'port': 4200
+        specPattern: 'tests/e2e/**/*.cy.ts',
     },
 
 
@@ -12,6 +11,6 @@ export default defineConfig({
             framework: 'angular',
             bundler: 'webpack',
         },
-        specPattern: 'tests/e2e/**/*.cy.ts'
+        specPattern: 'tests/components/**/*.cy.ts'
     }
 })

@@ -116,6 +116,7 @@
         "cypress-open": {
           "builder": "@cypress/schematic:cypress",
           "options": {
+            "devServerTarget": "frontend:serve",
             "watch": true,
             "headless": false
           }
