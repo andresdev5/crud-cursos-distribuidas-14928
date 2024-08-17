@@ -1,6 +1,7 @@
 package ec.edu.espe.msvc.courses.service.impl;
 
 import ec.edu.espe.msvc.courses.dto.CourseDto;
+import ec.edu.espe.msvc.courses.dto.EnrollmentDto;
 import ec.edu.espe.msvc.courses.entity.Course;
 import ec.edu.espe.msvc.courses.repository.CourseRepository;
 import ec.edu.espe.msvc.courses.service.CourseService;
@@ -10,6 +11,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -22,20 +24,23 @@ public class CourseServiceImpl implements CourseService {
     private ModelMapper modelMapper;
 
     @Override
-    public List<Course> getAll() {
-        return courseRepository.findAll();
+    public List<CourseDto> getAll() {
+        return courseRepository.findByOrderByIdDesc().stream()
+                .map(this::mapToCourseDto)
+                .toList();
     }
 
     @Override
-    public Optional<Course> getById(Long id) {
-        return courseRepository.findById(id);
+    public Optional<CourseDto> getById(Long id) {
+        return courseRepository.findById(id).map(this::mapToCourseDto);
     }
 
     @Override
-    public Course save(CourseDto course) {
+    public CourseDto save(CourseDto course) {
         Course entity = modelMapper.map(course, Course.class);
         entity.setId(null);
-        return courseRepository.save(entity);
+        entity.setCreatedAt(new Date());
+        return mapToCourseDto(courseRepository.save(entity));
     }
 
     @Override
@@ -44,7 +49,7 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
-    public Course update(CourseDto course) {
+    public CourseDto update(CourseDto course) {
         Course entity = courseRepository.findById(course.getId())
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "El id del curso no existe o es incorrecto."));
 
@@ -52,6 +57,36 @@ public class CourseServiceImpl implements CourseService {
             entity.setName(course.getName());
         }
 
-        return courseRepository.save(entity);
+        entity.setDescription(course.getDescription());
+        entity.setUpdatedAt(new Date());
+
+        return mapToCourseDto(courseRepository.save(entity));
+    }
+
+    @Override
+    public List<CourseDto> search(String query) {
+        return courseRepository.findByNameContainingIgnoreCase(query).stream()
+                .map(this::mapToCourseDto)
+                .toList();
+    }
+
+    private CourseDto mapToCourseDto(Course course) {
+        return CourseDto.builder()
+                .id(course.getId())
+                .name(course.getName())
+                .description(course.getDescription())
+                .createdAt(course.getCreatedAt())
+                .updatedAt(course.getUpdatedAt())
+                .enrollments(course.getEnrollments().stream()
+                        .map(enrollment -> EnrollmentDto.builder()
+                                .id(enrollment.getId())
+                                .courseId(enrollment.getCourse().getId())
+                                .userId(enrollment.getUserId())
+                                .status(enrollment.getStatus())
+                                .enrolledAt(enrollment.getEnrolledAt())
+                                .course(null)
+                                .build())
+                        .toList())
+                .build();
     }
 }

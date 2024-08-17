@@ -60,4 +60,9 @@ public class UserController {
     public List<UserDto> fetchUsers(@RequestParam List<Long> ids){
         return userService.fetchUsersByIds(ids);
     }
+
+    @GetMapping("/search")
+    public List<UserDto> search(@RequestParam String query) {
+        return userService.search(query);
+    }
 }

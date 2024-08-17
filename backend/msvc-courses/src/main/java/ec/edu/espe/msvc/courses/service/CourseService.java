@@ -7,9 +7,10 @@ import java.util.List;
 import java.util.Optional;
 
 public interface CourseService {
-    List<Course> getAll();
-    Optional<Course> getById(Long id);
-    Course save(CourseDto course);
+    List<CourseDto> getAll();
+    Optional<CourseDto> getById(Long id);
+    CourseDto save(CourseDto course);
     void delete(Long id);
-    Course update(CourseDto course);
+    CourseDto update(CourseDto course);
+    List<CourseDto> search(String query);
 }

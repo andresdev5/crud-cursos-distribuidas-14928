@@ -18,24 +18,19 @@ public class CourseController {
     private CourseService courseService;
 
     @GetMapping
-    public List<Course> getAll() {
+    public List<CourseDto> getAll() {
         return courseService.getAll();
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<?> getById(@PathVariable Long id){
-        Optional<Course> courseOptional = courseService.getById(id);
-
-        if(courseOptional.isPresent()){
-            return ResponseEntity.ok().body(courseOptional.get());
-        }
-
-        return ResponseEntity.notFound().build();
+    public ResponseEntity<CourseDto> getById(@PathVariable Long id){
+        return courseService.getById(id).map(course -> ResponseEntity.ok().body(course))
+                .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> delete(@PathVariable Long id){
-        Optional<Course> optionalCourse = courseService.getById(id);
+    public ResponseEntity<CourseDto> delete(@PathVariable Long id){
+        Optional<CourseDto> optionalCourse = courseService.getById(id);
 
         if(optionalCourse.isPresent()){
             courseService.delete(id);
@@ -46,12 +41,17 @@ public class CourseController {
     }
 
     @PostMapping
-    public ResponseEntity<?> save(@Validated(CourseDto.Create.class) @RequestBody CourseDto course) {
+    public ResponseEntity<CourseDto> save(@Validated(CourseDto.Create.class) @RequestBody CourseDto course) {
         return ResponseEntity.ok().body(courseService.save(course));
     }
 
     @PutMapping
-    public ResponseEntity<?> update(@Validated(CourseDto.Update.class) @RequestBody CourseDto course) {
+    public ResponseEntity<CourseDto> update(@Validated(CourseDto.Update.class) @RequestBody CourseDto course) {
         return ResponseEntity.ok().body(courseService.update(course));
+    }
+
+    @GetMapping("/search")
+    public List<CourseDto> search(@RequestParam String query) {
+        return courseService.search(query);
     }
 }

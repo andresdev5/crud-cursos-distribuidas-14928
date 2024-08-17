@@ -1,8 +1,7 @@
-package ec.edu.espe.msvc.courses.dto;
+package ec.edu.espe.msvc.users.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import ec.edu.espe.msvc.courses.entity.Enrollment;
-import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
@@ -32,7 +31,10 @@ public class CourseDto {
 
     private String description;
 
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private Date createdAt;
+
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private Date updatedAt;
 
     @Builder.Default

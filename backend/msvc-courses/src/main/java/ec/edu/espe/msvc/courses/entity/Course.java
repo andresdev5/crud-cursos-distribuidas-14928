@@ -4,16 +4,16 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
-@Entity
-@Table(name = "courses")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Getter
-@Setter
 @Builder
+@Entity
+@Table(name = "courses")
 public class Course {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,7 +22,16 @@ public class Course {
     @NotBlank
     private String name;
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-    @JoinColumn(name = "course_id", table = "course_users")
-    private List<UserCourse> userCourses;
+    private String description;
+
+    @Builder.Default
+    private Date createdAt = new Date();
+
+    @Builder.Default
+    private Date updatedAt = new Date();
+
+    @OneToMany
+    @JoinColumn(name = "course_id", referencedColumnName = "id")
+    @Builder.Default
+    private List<Enrollment> enrollments = new ArrayList<>();
 }

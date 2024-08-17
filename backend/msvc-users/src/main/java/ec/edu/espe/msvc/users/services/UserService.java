@@ -13,4 +13,5 @@ public interface UserService {
     void delete(Long id);
     User update(UserDto user);
     List<UserDto> fetchUsersByIds(List<Long> ids);
+    List<UserDto> search(String query);
 }
