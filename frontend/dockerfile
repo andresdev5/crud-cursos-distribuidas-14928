@@ -1,8 +1,7 @@
 FROM node:alpine
 WORKDIR /app
 COPY . /app
-RUN npm install -g @angular/cli
-RUN npm install
 ENV USERS_SERVICE_ENDPOINT=http://users-service:8001
 ENV COURSES_SERVICE_ENDPOINT=http://courses-service:8002
-CMD ["npm", "run", "start", "--", "--host", "0.0.0.0", "--port", "80"]
+#CMD ["npm", "run", "start", "--", "--host", "0.0.0.0", "--port", "80"]
+CMD [ -d "node_modules" ] && npm run start -- --host 0.0.0.0 --port 80 || npm ci && npm run start -- --host 0.0.0.0 --port 80
