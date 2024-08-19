@@ -5,43 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dcda3d95-a3b8-4e43-b288-fca0969bebd3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/msvc-courses/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-courses/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msvc-courses/src/main/java/ec/edu/espe/msvc/courses/config/ConfigurationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-courses/src/main/java/ec/edu/espe/msvc/courses/config/ConfigurationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msvc-courses/src/main/java/ec/edu/espe/msvc/courses/controller/CourseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-courses/src/main/java/ec/edu/espe/msvc/courses/controller/CourseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msvc-courses/src/main/java/ec/edu/espe/msvc/courses/controller/UserCourseController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/msvc-courses/src/main/java/ec/edu/espe/msvc/courses/dto/CourseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-courses/src/main/java/ec/edu/espe/msvc/courses/dto/CourseDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msvc-courses/src/main/java/ec/edu/espe/msvc/courses/dto/UserCourseDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/msvc-courses/src/main/java/ec/edu/espe/msvc/courses/entity/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-courses/src/main/java/ec/edu/espe/msvc/courses/entity/Course.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msvc-courses/src/main/java/ec/edu/espe/msvc/courses/entity/UserCourse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/msvc-courses/src/main/java/ec/edu/espe/msvc/courses/repository/CourseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-courses/src/main/java/ec/edu/espe/msvc/courses/repository/CourseRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msvc-courses/src/main/java/ec/edu/espe/msvc/courses/repository/UserCourseRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/msvc-courses/src/main/java/ec/edu/espe/msvc/courses/service/CourseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-courses/src/main/java/ec/edu/espe/msvc/courses/service/CourseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msvc-courses/src/main/java/ec/edu/espe/msvc/courses/service/UserCourseService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/msvc-courses/src/main/java/ec/edu/espe/msvc/courses/service/impl/CourseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-courses/src/main/java/ec/edu/espe/msvc/courses/service/impl/CourseServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msvc-courses/src/main/java/ec/edu/espe/msvc/courses/service/impl/UserCourseServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/msvc-courses/src/main/resources/db.changelog.xml" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-courses/src/main/resources/db.changelog.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msvc-courses/src/test/java/ec/edu/espe/msvc/courses/MsvcCoursesApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/msvc-users/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-users/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msvc-users/src/main/java/ec/edu/espe/msvc/users/MsvcUsersApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-users/src/main/java/ec/edu/espe/msvc/users/MsvcUsersApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msvc-users/src/main/java/ec/edu/espe/msvc/users/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-users/src/main/java/ec/edu/espe/msvc/users/controllers/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msvc-users/src/main/java/ec/edu/espe/msvc/users/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-users/src/main/java/ec/edu/espe/msvc/users/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msvc-users/src/main/java/ec/edu/espe/msvc/users/repositories/UsuarioRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/msvc-users/src/main/java/ec/edu/espe/msvc/users/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-users/src/main/java/ec/edu/espe/msvc/users/services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msvc-users/src/main/java/ec/edu/espe/msvc/users/services/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-users/src/main/java/ec/edu/espe/msvc/users/services/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msvc-users/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-users/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msvc-users/src/test/java/ec/edu/espe/msvc/users/MsvcUsuariosApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/users/components/user-form/user-form.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/users/components/user-form/user-form.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/environments/environment.development.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/environments/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/environments/environment.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/tests/e2e/users-page.test.cy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/tests/e2e/users-page.test.cy.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/tests/utils/fixtures.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/tests/utils/fixtures.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,6 +82,7 @@
       <updated>1723784159738</updated>
       <workItem from="1723784160810" duration="6716000" />
       <workItem from="1723822984347" duration="18000" />
+      <workItem from="1724031683394" duration="665000" />
     </task>
     <servers />
   </component>
