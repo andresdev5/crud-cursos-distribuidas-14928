@@ -60,6 +60,11 @@ services:
         condition: service_healthy
       users-service:
         condition: service_healthy
+    develop:
+      watch:
+        - action: sync+restart
+          path: ./frontend/src
+          target: /app/src
     environment:
       - USERS_SERVICE_ENDPOINT=http://localhost:8001
       - COURSES_SERVICE_ENDPOINT=http://localhost:8002
