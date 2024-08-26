@@ -5,60 +5,168 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dcda3d95-a3b8-4e43-b288-fca0969bebd3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msvc-courses/dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-courses/dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msvc-courses/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-courses/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msvc-courses/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-courses/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msvc-users/dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-users/dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/msvc-users/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-users/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msvc-users/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-users/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msvc-users/src/main/java/ec/edu/espe/msvc/users/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-users/src/main/java/ec/edu/espe/msvc/users/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msvc-users/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$/msvc-auth">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/msvc-gateway">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Liquibase Changelog" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 7
 }</component>
   <component name="ProjectId" id="2kj5UBWGPeSMS22FfJuFO4uCSQs" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Gradle.Build msvc-auth.executor": "Run",
+    "Gradle.Download Sources.executor": "Run",
+    "Maven.courses-backend [clean].executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.MsvcAuthApplication.executor": "Run",
     "Spring Boot.MsvcCoursesApplication.executor": "Run",
+    "Spring Boot.MsvcGatewayApplication.executor": "Run",
+    "Spring Boot.MsvcRegistryApplication.executor": "Run",
     "Spring Boot.MsvcUsersApplication.executor": "Run",
     "git-widget-placeholder": "main",
+    "jdk.selected.JAVA_MODULE": "corretto-17",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/workspace/ESPE-2024-MAY-SEP/Distribuidas/workspace/CrudCursos/backend/msvc-users/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "File.Encoding",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.51771826",
+    "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Spring Boot.MsvcCoursesApplication">
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\workspace\ESPE-2024-MAY-SEP\Distribuidas\workspace\CrudCursos\backend\msvc-users\src\main\resources" />
+      <recent name="C:\workspace\ESPE-2024-MAY-SEP\Distribuidas\workspace\CrudCursos\backend\msvc-auth\src\main\resources" />
+      <recent name="C:\workspace\ESPE-2024-MAY-SEP\Distribuidas\workspace\CrudCursos\backend\msvc-auth\src\main\java\ec\edu\espe\msvc\auth" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ec.edu.espe.msvc.users.config" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean" />
+    </option>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="Application" />
+        <option value="MicronautRunConfigurationType" />
+        <option value="QuarkusRunConfigurationType" />
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.MsvcAuthApplication">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="msvc-courses" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="msvc-courses" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MsvcAuthApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="msvc-auth" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ec.edu.espe.msvc.auth.MsvcAuthApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MsvcCoursesApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="msvc-courses" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="ec.edu.espe.msvc.courses.MsvcCoursesApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MsvcGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="msvc-gateway" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ec.edu.espe.msvc.gateway.MsvcGatewayApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MsvcRegistryApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="msvc-registry" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ec.edu.espe.msvc.registry.MsvcRegistryApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -71,6 +179,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Spring Boot.MsvcAuthApplication" />
+      <item itemvalue="Spring Boot.MsvcUsersApplication" />
+      <item itemvalue="Spring Boot.MsvcCoursesApplication" />
+      <item itemvalue="Spring Boot.MsvcGatewayApplication" />
+      <item itemvalue="Spring Boot.MsvcRegistryApplication" />
+    </list>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -93,7 +208,17 @@
       <workItem from="1724031683394" duration="665000" />
       <workItem from="1724080819321" duration="43000" />
       <workItem from="1724096143713" duration="642000" />
-      <workItem from="1724212263452" duration="3835000" />
+      <workItem from="1724212263452" duration="4443000" />
+      <workItem from="1724384820915" duration="106000" />
+      <workItem from="1724392611999" duration="583000" />
+      <workItem from="1724446392341" duration="14399000" />
+      <workItem from="1724485022926" duration="58000" />
+      <workItem from="1724485119591" duration="276000" />
+      <workItem from="1724485401779" duration="6845000" />
+      <workItem from="1724530753236" duration="23554000" />
+      <workItem from="1724626128070" duration="120000" />
+      <workItem from="1724626254453" duration="3656000" />
+      <workItem from="1724636293123" duration="14904000" />
     </task>
     <servers />
   </component>

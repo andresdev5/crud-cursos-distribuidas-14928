@@ -1,0 +1,67 @@
+server:
+  port: 8000
+
+spring:
+  application:
+    name: msvc-gateway
+  cloud:
+    gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOriginPatterns: "*"
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+              - OPTIONS
+              - HEAD
+              - PATCH
+            allowedHeaders:
+              - "*"
+            allowCredentials: true
+            maxAge: 3600
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+      - id: users-service
+        uri: lb://users-service
+        predicates:
+          - Path=/users-service/**
+          - Method=GET,POST,PUT,DELETE,OPTIONS,HEAD,PATCH
+        filters:
+          - StripPrefix=1
+          - TokenRelay=
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://localhost:8003/auth/realms/SpringBootKeycloak/protocol/openid-connect/certs
+      client:
+        registration:
+          keycloak:
+            client-id: courses-app
+            authorization-grant-type: authorization_code
+            scope:
+              - openid
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:8003/auth/realms/SpringBootKeycloak
+            user-name-attribute: preferred_username
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8004/eureka/
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    org.springframework.web.HttpLogging: DEBUG
+    org.springframework.security: DEBUG
+    org.springframework.security.oauth2: DEBUG
+    org.springframework.cloud.gateway: DEBUG

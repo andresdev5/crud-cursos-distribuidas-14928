@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: msvc-auth
+  datasource:
+    url: jdbc:postgresql://localhost:5432/msvc-auth
+    username: postgres
+    password: postgres
+  liquibase:
+    change-log: db/changelog/db.changelog-master.xml
+  jpa:
+    defer-datasource-initialization: true
+    properties:
+      hibernate:
+        transaction:
+          jta:
+            platform: org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform
+
+server:
+  port: 8003
+
+keycloak:
+  server:
+    port: 8003
+    contextPath: /auth
+    context-redirect: true
+    adminUser:
+      username: admin
+      password: admin
+    realmImportFile: coursesapp-realm.json
+
+logging:
+  level:
+    org:
+      springframework:
+        security: TRACE
