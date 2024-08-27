@@ -1,6 +1,6 @@
 feign:
   url:
-    courses-service: http://localhost:8002
+    user-service: http://localhost:8001
 logging:
   level:
     org:
@@ -25,20 +25,26 @@ management:
       enabled: true
     readiness-state:
       enabled: true
+  security:
+    enabled: false
 server:
-  port: 8001
+  port: 8002
 spring:
   application:
-    name: users-service
+    name: courses-service
+  cloud:
+    openfeign:
+      oauth2:
+        enabled: true
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    password: root
-    url: jdbc:mysql://localhost:3306/msvc-users
-    username: root
+    driver-class-name: org.postgresql.Driver
+    password: postgres
+    url: jdbc:postgresql://localhost:5432/msvc-courses
+    username: postgres
   jpa:
-    database-platform: org.hibernate.dialect.MySQLDialect
-    hibernate:
-      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  liquibase:
+    change-log: classpath:db.changelog.xml
   security:
     oauth2:
       resourceserver:
@@ -50,4 +56,4 @@ springdoc:
 eureka:
   client:
     service-url:
-        defaultZone: http://localhost:8004/eureka/
+      defaultZone: http://localhost:8004/eureka/

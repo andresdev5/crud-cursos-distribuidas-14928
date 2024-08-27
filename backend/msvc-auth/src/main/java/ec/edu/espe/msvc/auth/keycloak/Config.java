@@ -10,10 +10,15 @@ import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import javax.naming.*;
 import javax.naming.spi.NamingManager;
 import javax.sql.DataSource;
+import java.util.Arrays;
+import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.logging.Level;
@@ -25,6 +30,23 @@ public class Config {
 
 	private final ServerProperties properties;
 	private final DataSource dataSource;
+
+	@Bean
+	CorsConfigurationSource corsConfigurationSource() {
+		final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+		final CorsConfiguration config = new CorsConfiguration();
+		config.setAllowedOrigins(List.of(
+				"http://localhost:4200",
+				"http://localhost",
+				"http://20.197.227.154"
+		));
+		config.addAllowedHeader("*");
+		config.setAllowedMethods(
+				Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH", "HEAD")
+		);
+		source.registerCorsConfiguration("/**", config);
+		return source;
+	}
 
 	@Bean
 	@ConditionalOnMissingBean(name = "springBootPlatform")

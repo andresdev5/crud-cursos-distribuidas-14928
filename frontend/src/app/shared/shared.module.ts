@@ -8,6 +8,7 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ToastModule } from 'primeng/toast';
 import { ToastService } from '@app/services';
 import { MessageService } from 'primeng/api';
+import { KeycloakService } from 'keycloak-angular';
 
 @NgModule({
     declarations: [],
@@ -25,7 +26,8 @@ import { MessageService } from 'primeng/api';
     ],
     providers: [
         MessageService,
-        ToastService
+        ToastService,
+        KeycloakService,
     ],
 })
 export class SharedModule {

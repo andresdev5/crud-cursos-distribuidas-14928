@@ -16,4 +16,20 @@
             }
         </nav>
     </div>
+
+    <!-- user section -->
+    @if (isLogged && userProfile) {
+        <div class="flex items-center justify-between p-4 mb-1 bg-gray-100 rounded-lg dark:bg-gray-800">
+            <div class="flex">
+                <div class="flex flex-col ml-3">
+                    <span class="text-sm font-medium text-gray-800 dark:text-gray-200">
+                        {{ userProfile.username }}
+                    </span>
+                </div>
+            </div>
+            <button class="p-1 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none" (click)="logout()">
+                <fa-icon [icon]="['fas', 'sign-out-alt']"></fa-icon>
+            </button>
+        </div>
+    }
 </aside>

@@ -6,10 +6,15 @@ spring:
     name: msvc-gateway
   cloud:
     gateway:
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
       globalcors:
-        corsConfigurations:
+        cors-configurations:
           '[/**]':
-            allowedOriginPatterns: "*"
+            allowedOrigins:
+              - 'http://localhost:4200'
+              - 'http://localhost'
+              - 'http://20.197.227.154'
             allowedMethods:
               - GET
               - POST
@@ -31,6 +36,14 @@ spring:
         uri: lb://users-service
         predicates:
           - Path=/users-service/**
+          - Method=GET,POST,PUT,DELETE,OPTIONS,HEAD,PATCH
+        filters:
+          - StripPrefix=1
+          - TokenRelay=
+      - id: courses-service
+        uri: lb://courses-service
+        predicates:
+          - Path=/courses-service/**
           - Method=GET,POST,PUT,DELETE,OPTIONS,HEAD,PATCH
         filters:
           - StripPrefix=1

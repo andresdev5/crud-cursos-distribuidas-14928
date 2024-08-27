@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router, RouterModule } from '@angular/router';
+import { AuthService } from '@app/services/auth.service';
 import { SharedModule } from '@app/shared/shared.module';
+import { KeycloakService } from 'keycloak-angular';
+import { KeycloakProfile } from 'keycloak-js';
 
 @Component({
     selector: 'app-sidebar',
@@ -9,7 +12,7 @@ import { SharedModule } from '@app/shared/shared.module';
     imports: [
         SharedModule,
         RouterModule
-    ]
+    ],
 })
 export class SidebarComponent implements OnInit {
     public routes: any[] = [
@@ -32,11 +35,25 @@ export class SidebarComponent implements OnInit {
             active: false,
         }
     ];
-    private router: Router;
+    public isLogged: boolean = false;
+    public userProfile: KeycloakProfile | undefined;
 
-    constructor(router: Router) {
+    constructor(private router: Router, private authService: AuthService) {
         this.router = router;
+        this.authService = authService;
     }
 
-    ngOnInit(): void {}
+    logout() {
+        this.authService.logout();
+    }
+
+    ngOnInit(): void {
+        this.isLogged = this.authService.isLoggedIn();
+
+        if (this.isLogged) {
+            this.authService.userProfile().subscribe((profile) => {
+                this.userProfile = profile;
+            });
+        }
+    }
 }
