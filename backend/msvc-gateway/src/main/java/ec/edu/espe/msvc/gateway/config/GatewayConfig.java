@@ -1,16 +1,11 @@
 package ec.edu.espe.msvc.gateway.config;
 
-import com.nimbusds.jose.jwk.source.JWKSource;
-import com.nimbusds.jose.proc.SecurityContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.annotation.Order;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
 import org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity;
-import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.config.web.server.ServerHttpSecurity;
-import org.springframework.security.oauth2.jwt.JwtDecoder;
 import org.springframework.security.web.server.SecurityWebFilterChain;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.reactive.CorsConfigurationSource;
@@ -27,6 +22,7 @@ public class GatewayConfig {
         return http
                 .authorizeExchange(exchange -> exchange
                         .pathMatchers(
+                                "/actuator/**",
                                 "/users-service/public/**",
                                 "/courses-service/public/**"
                         ).permitAll()
@@ -43,6 +39,7 @@ public class GatewayConfig {
         return (web) -> web.debug(false)
                 .ignoring()
                 .requestMatchers(
+                        "/actuator/**",
                         "/users-service/public/**",
                         "/courses-service/public/**"
                 );

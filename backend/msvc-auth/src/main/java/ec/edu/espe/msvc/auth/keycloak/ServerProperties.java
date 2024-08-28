@@ -8,4 +8,5 @@ public record ServerProperties(
         String contextPath,
         Integer port,
         String username,
+        String importFile,
         String password) {}

@@ -3,13 +3,11 @@ feign:
     courses-service: http://localhost:8002
 logging:
   level:
-    org:
-      hibernate:
-        SQL: DEBUG
-        type:
-          descriptor:
-            sql:
-              BasicBinder: TRACE
+    root: INFO
+    org.springframework.web: INFO
+    org.springframework.web.HttpLogging: DEBUG
+    org.springframework.security: DEBUG
+    org.springframework.security.oauth2: DEBUG
 management:
   endpoint:
     health:
@@ -43,11 +41,11 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://localhost:8003/auth/realms/SpringBootKeycloak
+          issuer-uri: ${KEYCLOAK_ISSUER_URI:http://localhost:8003/auth/realms/SpringBootKeycloak}
 springdoc:
   swagger-ui:
     path: /swagger-ui.html
 eureka:
   client:
     service-url:
-        defaultZone: http://localhost:8004/eureka/
+        defaultZone: ${EUREKA_URL:http://localhost:8004/eureka/}

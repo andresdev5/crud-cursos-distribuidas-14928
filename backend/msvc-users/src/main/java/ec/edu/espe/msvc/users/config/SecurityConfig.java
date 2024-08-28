@@ -49,7 +49,7 @@ public class SecurityConfig {
         http.cors(withDefaults());
         http.authorizeHttpRequests(authorizeRequests ->
                 authorizeRequests
-                    .requestMatchers("/public/**").permitAll()
+                    .requestMatchers("/public/**", "/actuator/**").permitAll()
                     .anyRequest().authenticated()
         );
         http.oauth2ResourceServer((oauth2) -> oauth2.jwt(Customizer.withDefaults()));
@@ -61,7 +61,7 @@ public class SecurityConfig {
     WebSecurityCustomizer webSecurityCustomizer() {
         return (web) -> web.debug(false)
                 .ignoring()
-                .requestMatchers("/public/**");
+                .requestMatchers("/public/**", "/actuator/**");
     }
 
     @Bean
