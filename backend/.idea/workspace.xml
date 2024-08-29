@@ -6,25 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="dcda3d95-a3b8-4e43-b288-fca0969bebd3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msvc-auth/src/main/java/ec/edu/espe/msvc/auth/keycloak/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-auth/src/main/java/ec/edu/espe/msvc/auth/keycloak/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msvc-auth/src/main/java/ec/edu/espe/msvc/auth/keycloak/ServerProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-auth/src/main/java/ec/edu/espe/msvc/auth/keycloak/ServerProperties.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msvc-auth/src/main/resources/META-INF/keycloak-server.json" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-auth/src/main/resources/META-INF/keycloak-server.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msvc-auth/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-auth/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msvc-courses/release/application.jar" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-courses/release/application.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msvc-courses/src/main/java/ec/edu/espe/msvc/courses/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-courses/src/main/java/ec/edu/espe/msvc/courses/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msvc-courses/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-courses/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msvc-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-gateway/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msvc-gateway/src/main/java/ec/edu/espe/msvc/gateway/MsvcGatewayApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-gateway/src/main/java/ec/edu/espe/msvc/gateway/MsvcGatewayApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/msvc-gateway/src/main/java/ec/edu/espe/msvc/gateway/config/GatewayConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-gateway/src/main/java/ec/edu/espe/msvc/gateway/config/GatewayConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msvc-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-gateway/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msvc-registry/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-registry/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msvc-registry/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-registry/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msvc-users/release/application.jar" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-users/release/application.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msvc-users/src/main/java/ec/edu/espe/msvc/users/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-users/src/main/java/ec/edu/espe/msvc/users/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msvc-users/src/main/resources/META-INF/keycloak-server.json" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-users/src/main/resources/META-INF/keycloak-server.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msvc-users/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-users/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/environments/environment.template.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/environments/environment.template.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +76,7 @@
     "Spring Boot.MsvcGatewayApplication.executor": "Run",
     "Spring Boot.MsvcRegistryApplication.executor": "Run",
     "Spring Boot.MsvcUsersApplication.executor": "Run",
-    "git-widget-placeholder": "feature/oauth2-gateway-auth",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "corretto-17",
     "kotlin-language-version-configured": "true",
@@ -108,7 +90,7 @@
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.51771826",
     "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.uml",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -246,10 +228,16 @@
       <workItem from="1724726267694" duration="8161000" />
       <workItem from="1724775346881" duration="5362000" />
       <workItem from="1724809214631" duration="14931000" />
+      <workItem from="1724885126960" duration="477000" />
+      <workItem from="1724885617607" duration="2208000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

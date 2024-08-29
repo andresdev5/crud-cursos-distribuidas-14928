@@ -1,5 +1,6 @@
 package ec.edu.espe.msvc.gateway.config;
 
+import ec.edu.espe.msvc.gateway.MsvcGatewayApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
@@ -16,7 +17,7 @@ import java.util.List;
 
 @Configuration
  @EnableWebFluxSecurity
-public class GatewayConfig {
+public class GatewayConfig extends MsvcGatewayApplication {
     @Bean
     SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity http) {
         return http
