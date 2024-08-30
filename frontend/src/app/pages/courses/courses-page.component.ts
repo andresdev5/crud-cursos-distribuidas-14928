@@ -12,6 +12,7 @@ import { ConfirmationService, MenuItem, MessageService } from 'primeng/api';
 import { lastValueFrom } from 'rxjs';
 import { SharedModule } from '@app/shared';
 import { EnrollmentStatus } from '@app/models/enrollment-status.model';
+import { AuthService } from '@app/services/auth.service';
 
 interface CourseTableItem {
     data: CourseModel;
@@ -37,6 +38,7 @@ export class CoursesPageComponent implements OnInit {
         private messageService: MessageService,
         private courseService: CourseService,
         private router: Router,
+        public authService: AuthService,
     ) {}
 
     ngOnInit(): void {

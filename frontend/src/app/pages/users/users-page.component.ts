@@ -10,6 +10,7 @@ import { ConfirmationService, MenuItem, MessageService } from 'primeng/api';
 import { lastValueFrom } from 'rxjs';
 import { SharedModule } from '@app/shared';
 import { DataUtils } from '@app/shared/utils/data.utils';
+import { AuthService } from '@app/services/auth.service';
 
 interface UserTableItem {
     data: UserModel;
@@ -35,7 +36,8 @@ export class UsersPageComponent implements OnInit {
         private toastService: ToastService,
         private userService: UserService,
         private router: Router,
-        private enrollmentService: EnrollmentService
+        private enrollmentService: EnrollmentService,
+        public authService: AuthService
     ) {}
 
     ngOnInit(): void {

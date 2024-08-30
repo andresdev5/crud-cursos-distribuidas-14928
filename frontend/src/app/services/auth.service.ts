@@ -24,4 +24,8 @@ export class AuthService {
     public userProfile(): Observable<KeycloakProfile> {
         return from(this.keycloakService.loadUserProfile());
     }
+
+    public hasRole(role: string): boolean {
+        return this.keycloakService.getUserRoles().includes(role);
+    }
 }

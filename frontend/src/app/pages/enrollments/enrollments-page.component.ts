@@ -12,6 +12,7 @@ import { TableModule } from 'primeng/table';
 import { ConfirmationService, MenuItem } from 'primeng/api';
 import { EnrollmentStatusNamePipe } from '@app/shared/pipes/enrollment-status.pipe';
 import { DataUtils } from '@app/shared/utils/data.utils';
+import { AuthService } from '@app/services/auth.service';
 
 interface EnrollmentsTableRow {
     enrollment: EnrollmentModel;
@@ -43,6 +44,7 @@ export class EnrollmentsPageComponent implements OnInit {
         private enrollmentService: EnrollmentService,
         private toastService: ToastService,
         private confirmationService: ConfirmationService,
+        public authService: AuthService,
     ) {}
 
     async ngOnInit() {
