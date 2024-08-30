@@ -92,7 +92,7 @@ services:
     environment:
       - spring.datasource.url=jdbc:postgresql://database-postgres:5432/msvc-courses
       - feign.url.user-service=http://users-service:8001
-      - KEYCLOAK_ISSUER_URI="http://${KEYCLOAK_HOSTNAME}:8003/auth/realms/SpringBootKeycloak"
+      - KEYCLOAK_ISSUER_URI=http://${KEYCLOAK_HOSTNAME}:8003/auth/realms/SpringBootKeycloak
       - EUREKA_URL=http://eureka-service:8004/eureka/
     develop:
       watch:
@@ -120,7 +120,7 @@ services:
     environment:
       - spring.datasource.url=jdbc:mysql://database-mysql:3306/msvc-users
       - feign.url.courses-service=http://courses-service:8002
-      - KEYCLOAK_ISSUER_URI="http://${KEYCLOAK_HOSTNAME}:8003/auth/realms/SpringBootKeycloak"
+      - KEYCLOAK_ISSUER_URI=http://${KEYCLOAK_HOSTNAME}:8003/auth/realms/SpringBootKeycloak
       - EUREKA_URL=http://eureka-service:8004/eureka/
     develop:
       watch:
@@ -152,8 +152,8 @@ services:
     environment:
       - USERS_SERVICE_ENDPOINT=http://localhost:8001
       - COURSES_SERVICE_ENDPOINT=http://localhost:8002
-      - GATEWAY_ENDPOINT="http://${GATEWAY_HOSTNAME}:8000"
-      - KEYCLOAK_URL="http://${KEYCLOAK_HOSTNAME}:8003/auth"
+      - GATEWAY_ENDPOINT=http://${GATEWAY_HOSTNAME}:8000
+      - KEYCLOAK_URL=http://${KEYCLOAK_HOSTNAME}:8003/auth
       - KEYCLOAK_REALM=SpringBootKeycloak
       - KEYCLOAK_CLIENT_ID=courses-app
     healthcheck:

@@ -10,6 +10,12 @@ set eureka_service_path=%CD%\msvc-registry
 set users_service_path=%CD%\msvc-users
 set courses_service_path=%CD%\msvc-courses
 
+chmod +x %auth_service_path%\build.cmd
+chmod +x %gateway_service_path%\build.cmd
+chmod +x %eureka_service_path%\build.cmd
+chmod +x %users_service_path%\build.cmd
+chmod +x %courses_service_path%\build.cmd
+
 echo "Building backend services"
 
 echo "Building auth service"
